@@ -2,7 +2,8 @@
 
 <h2>Contenido</h2>
 
-  [Historia de Javascript: ¿Qué es ECMAScript?](#historia-de-javascript-¿qué-es-ecmascript)
+- [Historia de Javascript: ¿Qué es ECMAScript?](#historia-de-javascript-¿qué-es-ecmascript)
+- [¿Qué es el TC39?](#¿qué-es-el-tc39)
 
 ## Historia de Javascript: ¿Qué es ECMAScript?
 
@@ -67,7 +68,7 @@ Una alternativa a Visual Studio Code es Codi.link, un editor de código para esc
 
 ## ¿Qué es el TC39?
 
-**TC39** es un grupo de desarrolladores, académicos y hackers que están a cargo de revisar cada nueva propuesta o funcionalidad que cumpla con el estándar. El estándar es una serie de pasos que la nueva propuesta s**igue para publicarla en la alguna versión de ECMAScript a futuro**.
+**TC39** es un grupo de desarrolladores, académicos y hackers que están a cargo de revisar cada nueva propuesta o funcionalidad que cumpla con el estándar. El estándar es una serie de pasos que la nueva propuesta **sigue para publicarla en la alguna versión de ECMAScript a futuro**.
 
 <h3>Etapas de una nueva propuesta para ECMAScript</h3>
 
@@ -81,4 +82,20 @@ Las etapas de una nueva propuesta para ECMAScript son:
 
 <p align="center"><img width=90% src="./pictures/es01.PNG"></p>
 
+
+## Configurando Nuestras Herramientas
+
+**Plugins importantes para este curso**:
+
+* **Code Runner**. Permite ejecutar piezas de código seleccionadas y muestra el output directamente en nuestro editor de código. (Más de Code Runner)
+* **Live Server**. La vamos a utilizar para ejecutar un servidor y ver los cambios efectuados en tu código. (Más de Live Server)
+* **JavaScript (ES6)** code snippets. Autocompleta y brinda sugerencias al momento de escribir código. (Más de code snippets)
+
+**Plugins recomendados para usar en tu día a día como frontend developer**
+
+* **Auto Close Tag**. Ayuda a cerrar más rápido las etiquetas que vas abriendo.
+* **Error Lens**. Muestra los errores visualizandolos de forma atractiva para que no pases ninguno por alto.
+* **Guides**. Te ayudan a indentar tu código y ordenarlo de forma más eficiente.
+* **Indent-rainbow.** Hace que la indentación sea más amigable con la ayuda de colores diferentes por nivel.
+* **Palenight Theme.** Úsalo si quieres visualizar los mismos colores que se muestran en mi editor de código.
 
