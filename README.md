@@ -99,3 +99,12 @@ Las etapas de una nueva propuesta para ECMAScript son:
 * **Indent-rainbow.** Hace que la indentación sea más amigable con la ayuda de colores diferentes por nivel.
 * **Palenight Theme.** Úsalo si quieres visualizar los mismos colores que se muestran en mi editor de código.
 
+```bash 
+npm init  # Se utiliza para inicializar el package.json
+          # Si se pasa -y inicia las configuraciones por defecto así npm init -y
+```
+Es recomendable colocar una descripción del proyecto, en keywords por lo menos 3 palabras que permitan identificar para que sirve el proyecto, para definir autor o autores, se lo hace de la siguiente manera: Tu Nombre < tu@correo >
+
+license: (ISC) MIT Es una licencia permitiva que se puede utilizar en opensource 
+
+
