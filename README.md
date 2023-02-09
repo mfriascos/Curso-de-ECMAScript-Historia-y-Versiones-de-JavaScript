@@ -4,6 +4,9 @@
 
 - [Historia de Javascript: ¿Qué es ECMAScript?](#historia-de-javascript-¿qué-es-ecmascript)
 - [¿Qué es el TC39?](#¿qué-es-el-tc39)
+- [Configurando Nuestras Herramientas](#configurando-nuestras-herramientas)
+- [ES6: let y const, y arrow functions](#es6-let-y-const-y-arrow-functions)
+
 
 ## Historia de Javascript: ¿Qué es ECMAScript?
 
@@ -106,5 +109,163 @@ npm init  # Se utiliza para inicializar el package.json
 Es recomendable colocar una descripción del proyecto, en keywords por lo menos 3 palabras que permitan identificar para que sirve el proyecto, para definir autor o autores, se lo hace de la siguiente manera: Tu Nombre < tu@correo >
 
 license: (ISC) MIT Es una licencia permitiva que se puede utilizar en opensource 
+
+## ES6: let y const, y arrow functions
+
+En ECMAScript 6 (ES6 o ES2015) fueron publicadas varias características nuevas que dotaron de gran poder al lenguaje, dos de estas son una nueva forma de declaración de variables con let y const, y funciones flechas.
+
+<h3>La nueva forma para declarar variables con let y const</h3>
+
+Hasta ahora aprendiste a declarar variables con var, sin embargo, a partir de la especificación de ES6 se agregaron nuevas formas para la declaración de variables.
+
+Las nuevas palabras reservadas let y const resuelven varios problemas con var como el scope, hoisting, variables globales, re-declaración y re-asignación de variables.
+
+<h4> Variables re-declaradas y re-asignadas</h4>
+
+La re-declaración es volver a declarar una variable, y la re-asignación es volver a asignar un valor. Entonces cada palabra reservada tiene una forma diferente de manejar variables:
+
+* Una variable declarada con **var** puede ser re-declarada y re-asignada.
+* Una variable declarada con **let** puede ser re-asignada, pero no re-declarada.
+* Una variable declarada con **const** no puede ser re-declarada, ni re-asignada. Su declaración y asignación debe ser en una línea, caso contrario habrá un error.
+
+En conclusión, si intentas re-declarar una variable declarada con let y const habrá un error de “variable ya declarada”; por otro lado, si intentas re-asignar una variable declarada con const existirá un “error de tipo”.
+
+En los demás casos, JavaScript lo aceptará como válidos, algo problemático con var, por eso deja de utilizarlo.
+
+<h4>Ejemplo de declaración y asignación en diferentes líneas</h4>
+
+```Javascript
+// Declaración de variables
+var nameVar 
+let nameLet
+
+// Asignación de variables
+nameVar= "soy var"
+nameLet = "soy let"
+```
+Aunque realmente lo que pasa si no asignas un valor en la declaración, JavaScript le asigna un valor undefined.
+
+<h4>Ejemplo de declarar y asignar con const en diferentes líneas de código</h4>
+
+```Javascript
+const pi  // SyntaxError: Missing initializer in const declaration.
+pi = 3.14
+```
+
+<h4>Ejemplo de re-declaración de variables</h4>
+
+```javascript
+var nameVar = "soy var"
+let nameLet = "soy let"
+const nameConst = "soy const"
+
+// Re-declaración de variables
+var nameVar = "var soy" 
+console.log(nameVar) // 'var soy'
+
+let nameLet = "let soy" // SyntaxError: Identifier 'nameLet' has already been declared.
+
+const nameConst = "const soy" //SyntaxError: Identifier 'nameConst' has already been declared.
+```
+
+<h4>Ejemplo de re-asignación de variables</h4>
+
+```javascript
+var nameVar = "soy var"
+let nameLet = "soy let"
+const nameConst = "soy const"
+
+// Re-asignación de variables
+nameVar = "otro var"
+console.log(nameVar) // 'otro var'
+
+nameLet = "otro let"
+console.log(nameVar) // otro let'
+
+nameConst = "otro const" //TypeError: Assignment to constant variable.
+```
+
+Ten en cuenta que los errores pararán la ejecución de tu programa.
+
+<h4>Scope</h4>
+
+En el tema del scope, let y const tienen un scope de bloque y var no.
+
+```javascript
+{
+var nameVar = "soy var"
+let nameLet = "soy let"
+}
+
+console.log(nameVar) // 'soy var'
+console.log(nameLet) // ReferenceError: nameLet is not defined
+```
+
+Todo el tema de Scope tiene su propio curso que deberías haber tomado: Curso de Closures y Scope en JavaScript
+
+<h4>Objeto global</h4>
+
+En variables globales, let y constno guardan sus variables en el objeto global (window, global o globalThis), mientras que var sí los guarda.
+
+```javascript
+var nameVar = "soy var"
+let nameLet = "soy let"
+const nameConst = "soy const"
+
+globalThis.nameVar   // 'soy var'
+globalThis.nameLet   // undefined
+globalThis.nameConst  // undefined
+```
+
+Esto es importante para que no exista re-declaración de variables.
+
+<h4>Funciones flecha</h4>
+
+Las funciones flecha (arrow functions) consiste en una función anónima con la siguiente estructura:
+
+```javascript
+//Función tradicional
+function nombre (parámetros) {
+    return valorRetornado
+}
+
+//Función flecha
+const nombre = (parámetros) => {
+    return valorRetornado
+}
+```
+
+Se denominan función flecha por el elemento => en su sintaxis.
+
+<h5>Omitir paréntesis en las funciones flecha</h5>
+
+Si existe un solo parámetro, puedes omitir los paréntesis.
+
+```javascript
+const porDos = num => {
+    return num * 2
+}
+```
+<h4>Retorno implícito</h4>
+
+Las funciones flecha tienen un retorno implícito, es decir, se puede omitir la palabra reservada return, para que el código sea escrito en una sola línea.
+
+```javascript
+//Función tradicional
+function suma (num1, num2) {
+    return num1 + num2
+}
+
+//Función flecha
+const suma = (num1, num2) => num1 + num2
+```
+
+Si el retorno requiere de más líneas y aún deseas utilizarlo de manera implícita, deberás envolver el cuerpo de la función entre paréntesis.
+
+```javascript
+const suma = (num1, num2) => (
+    num1 + num2
+)
+```
 
 
