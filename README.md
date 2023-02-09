@@ -64,3 +64,21 @@ Esto es relevante para conocer qué puedes aplicar o qué no en tu código. Tamb
 <p align="center"><img width=100% src="./pictures/ecma02.png"></p>
 
 Una alternativa a Visual Studio Code es Codi.link, un editor de código para escribir HTML, CSS y JavaScript; para visualizar el resultado a tiempo real.
+
+## ¿Qué es el TC39?
+
+**TC39** es un grupo de desarrolladores, académicos y hackers que están a cargo de revisar cada nueva propuesta o funcionalidad que cumpla con el estándar. El estándar es una serie de pasos que la nueva propuesta s**igue para publicarla en la alguna versión de ECMAScript a futuro**.
+
+<h3>Etapas de una nueva propuesta para ECMAScript</h3>
+
+Las etapas de una nueva propuesta para ECMAScript son:
+
+* **Idea:** Una inquietud del desarrollador.
+* **Propuesta**: Cómo y por qué la idea soluciona un problema.
+* **Borrador**: Todo lo que implica la nueva funcionalidad detalladamente.
+* **Candidato**: La funcionalidad es probada y desarrollada por el comité.
+* **Preparada**: La funcionalidad está lista para ser publicada.
+
+<p align="center"><img width=90% src="./pictures/es01.PNG"></p>
+
+
