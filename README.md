@@ -6,6 +6,7 @@
 - [¿Qué es el TC39?](#¿qué-es-el-tc39)
 - [Configurando Nuestras Herramientas](#configurando-nuestras-herramientas)
 - [ES6: let y const, y arrow functions](#es6-let-y-const-y-arrow-functions)
+- [ES6: Parámetros por Defecto](#es6-parámetros-por-defecto)
 
 
 ## Historia de Javascript: ¿Qué es ECMAScript?
@@ -325,4 +326,68 @@ console.log(mensaje)
 // 'Línea 1
 // línea 2'
 ```
+
+## ES6: Parámetros por Defecto
+
+Los parámetros por defecto (default params) consisten en establecer un valor por defecto a los parámetros de una función, para asegurar que el código se ejecute correctamente en el caso de que no se establezcan los argumentos correspondientes en la invocación de la función.
+
+<h3>Cómo era utilizar valores por defecto antes de ES6</h3>
+
+Tal como puedes ver en el siguiente código, la función sumar recibe dos parámetros y retorna el valor total. Sin embargo, si alguien no decide poner alguno o todos los parámetros necesarios, pues que el programa no funcionará correctamente.
+
+```javascript
+function sumar(number1, number2){
+  return number1 + number2
+}
+
+sumar(3,4) // 7
+sumar(3)   // NaN  
+sumar()    // NaN
+```
+
+Antes de ES6, se debía establecer una variable y utilizar el operador **OR** ```( || )``` con el valor por defecto necesario. El caracter guion bajo ```( _ )``` lo utilizo para diferenciar el parámetro de la función de la variable declarada.
+
+```javascript
+function sumar(number1, number2){
+  var _number1 = number1 || 0
+  var _number2 = number2 || 0
+  
+  return _number1 + _number2
+}
+
+sumar(3,4) // 7
+sumar(3)   // 3
+sumar()    // 0
+```
+
+<h3>Cómo utilizar los parámetros por defecto</h3>
+
+Con los parámetros por defectos añadidos en ES6, eliminamos las declaraciones para mejorar la legibilidad y el mantenimiento del código de la siguiente manera:
+
+```javascript
+function sumar(number1 = 0, number2 = 0){
+  return number1 + number2
+}
+
+sumar(3,4) // 7
+sumar(3)   // 3
+sumar()    // 0
+```
+
+Puedes utilizar cualquier valor, siempre que sea necesario.
+
+<h4>Posición de los parámetros por defecto</h4>
+
+Si obligatoriamente necesitas el valor como argumento, ten presente que los parámetros por defecto siempre deben estar en las posiciones finales.
+
+```javascript
+// ❌ Mal
+function sumar(number1 = 0, number2) { ... }
+sumar(3)   // number1 = 3 y number2 = undefined 
+
+// ✅ Bien
+function sumar(number1, number2 = 0) { ... }
+sumar(3)   // number1 = 3 y number2 = 0
+```
+
 
